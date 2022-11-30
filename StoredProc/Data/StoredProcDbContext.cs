@@ -9,7 +9,7 @@ namespace StoredProc.Data
         public StoredProcDbContext(DbContextOptions<StoredProcDbContext> options)
             : base(options) { }
 
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Plane> Employee { get; set; }
 
         public DbSet<StoredProc.Models.Plane> Plane { get; set; }
 

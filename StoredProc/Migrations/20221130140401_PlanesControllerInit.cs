@@ -2,7 +2,7 @@
 
 namespace StoredProc.Migrations
 {
-    public partial class AddPlanesController : Migration
+    public partial class PlanesControllerInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,8 @@ namespace StoredProc.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Altitude = table.Column<int>(type: "int", nullable: false),
-                    Distance = table.Column<int>(type: "int", nullable: false)
+                    Distance = table.Column<int>(type: "int", nullable: false),
+                    Model = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

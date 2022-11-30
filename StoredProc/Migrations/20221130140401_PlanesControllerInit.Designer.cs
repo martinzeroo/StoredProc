@@ -9,8 +9,8 @@ using StoredProc.Data;
 namespace StoredProc.Migrations
 {
     [DbContext(typeof(StoredProcDbContext))]
-    [Migration("20211026092144_init")]
-    partial class init
+    [Migration("20221130140401_PlanesControllerInit")]
+    partial class PlanesControllerInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,23 +20,28 @@ namespace StoredProc.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("StoredProc.Models.Employee", b =>
+            modelBuilder.Entity("StoredProc.Models.Plane", b =>
                 {
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Salary")
+                    b.Property<int>("Altitude")
                         .HasColumnType("int");
 
-                    b.HasKey("FirstName");
+                    b.Property<int>("Distance")
+                        .HasColumnType("int");
 
-                    b.ToTable("Employee");
+                    b.Property<int>("Model")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Plane");
                 });
 #pragma warning restore 612, 618
         }

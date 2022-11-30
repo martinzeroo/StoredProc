@@ -18,25 +18,6 @@ namespace StoredProc.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("StoredProc.Models.Employee", b =>
-                {
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Salary")
-                        .HasColumnType("int");
-
-                    b.HasKey("FirstName");
-
-                    b.ToTable("Employee");
-                });
-
             modelBuilder.Entity("StoredProc.Models.Plane", b =>
                 {
                     b.Property<int>("Id")
@@ -48,6 +29,9 @@ namespace StoredProc.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Distance")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Model")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")

@@ -5,28 +5,28 @@
         </div>
         <form asp-controller="Employee" asp-action="DynamicSQL">
             <div>
-                <label for="firstName">First Name</label>
+                <label for="Name">Name</label>
                 <br />
-                <input type="text" name="firstName" placeholder="First Name" />
+                <input type="text" name="Name" placeholder="Name" />
             </div>
             <br />
             <div>
-                <label for="lastName">Last Name</label>
+                <label for="Altitude">Altitude</label>
                 <br />
-                <input type="text" name="lastName" placeholder="Last Name" />
+                <input type="text" name="Altitude" placeholder="Altitude" />
             </div>
             <br />
             <div>
-                <label for="gender">Gender</label>
+                <label for="Distance">Distance</label>
                 <br />
-                <select name="gender">
+                <select name="Distance">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
             </div>
             <br />
             <div>
-                <label for="salary">DynamicSQL</label>
+                <label for="Model">DynamicSQL</label>
                 <br />
                 <input type="number" name="DynamicSQL" placeholder="DynamicSQL" />
             </div>
@@ -36,19 +36,19 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">First name</th>
-                    <th scope="col">Last name</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Salary</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Altitude</th>
+                    <th scope="col">Distance</th>
+                    <th scope="col">Model</th>
                 </tr>
             <tbody>
-                @foreach (var employee in Model)
+                @foreach (var Plane in Model)
                 {
                     <tr>
-                        <td>@employee.FirstName</td>
-                        <td>@employee.LastName</td>
-                        <td>@employee.Gender</td>
-                        <td>@employee.Salary</td>
+                        <td>@Plane.Name</td>
+                        <td>@Plane.Altitude</td>
+                        <td>@Plane.Distance</td>
+                        <td>@Plane.Model</td>
                     </tr>
                 }
             </tbody>
